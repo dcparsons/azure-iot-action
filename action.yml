@@ -1,0 +1,18 @@
+name: 'Azure IOT Hub Cloud-to-Device Message Publisher'
+description: 'Sends a message from the cloud to a device connected to an Azure IOT Hub'
+inputs:
+  iot-hub-connection-string:  
+    description: 'The connection string for the Azure IOT Hub you want to connect to.'
+    required: true
+    default: ''
+  device-id:  
+    description: 'The device-id inside the Azure IOT Hub you want to send a message to.'
+    required: true
+    default: ''
+  message:  
+    description: 'The message to send to the device.'
+    required: true
+    default: ''
+runs:
+  using: 'node12'
+  main: 'index.js'
