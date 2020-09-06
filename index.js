@@ -8,8 +8,8 @@ var Message = require('azure-iot-common').Message;
 const core = require('@actions/core');
 const github = require('@actions/github');
 
-var connectionString = core.getInput(iot-hub-connection-string);
-var targetDevice = core.getInput(device-id);
+var connectionString = core.getInput('iot-hub-connection-string');
+var targetDevice = core.getInput('device-id');
 
 
 var serviceClient = Client.fromConnectionString(connectionString);
@@ -35,7 +35,7 @@ function printResultFor(op) {
         } else {
           console.log('Service client connected');
           serviceClient.getFeedbackReceiver(receiveFeedback);
-          var message = new Message(core.getInput(message));
+          var message = new Message(core.getInput('message'));
           message.ack = 'full';
           message.messageId = "My Message ID";
           console.log('Sending message: ' + message.getData());
