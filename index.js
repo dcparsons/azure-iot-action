@@ -16,8 +16,14 @@ var serviceClient = Client.fromConnectionString(connectionString);
 
 function printResultFor(op) {
     return function printResult(err, res) {
-      if (err) console.log(op + ' error: ' + err.toString());
-      if (res) console.log(op + ' status: ' + res.constructor.name);
+      if (err){
+        console.log(op + ' error: ' + err.toString());
+        process.exit(1);
+      } 
+      if (res){
+        console.log(op + ' status: ' + res.constructor.name);
+        process.exit(0);
+      } 
     };
   }
 
