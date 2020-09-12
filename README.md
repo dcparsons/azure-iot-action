@@ -18,7 +18,7 @@ This action allows you to send a Cloud-to-Device message as part of your Github 
  - **message** - the message you want to send to the device
 
 ### Leveraging Secrets
-Your IOT connection string is going to contain, at least, a shared access key which means that anyone that has the connection string can connect to your IOT Hub.  If you are going to use this action in your CI/CD workflow I would highly suggest using [GitHub Secrets](https://docs.github.com/en/actions/configuring-and-managing-workflows/creating-and-storing-encrypted-secrets) to store that data.  You can also choose to add your device-id as a secret.  Using secrets will change the implementation slightly as shown below.
+Your IOT connection string is going to contain a shared access key which will grant anyone with the connection string access to your IOT Hub.  If you are going to use this action in your CI/CD workflow I would highly suggest using [GitHub Secrets](https://docs.github.com/en/actions/configuring-and-managing-workflows/creating-and-storing-encrypted-secrets) to store that data.  You can also choose to add your device-id as a secret.  Using secrets will change the implementation slightly as shown below.
 
     - name: Publish Action C2D Message
       uses: dcparsons/azure-iot-action@v1.0.2
