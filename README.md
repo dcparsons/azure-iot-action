@@ -1,4 +1,4 @@
-# Microsoft Azure IOT Hub - C2D Action
+# Microsoft Azure IoT Hub - C2D Action
 
 This action allows you to send a Cloud-to-Device message as part of your Github Actions CI/CD workflow. 
 
@@ -18,7 +18,7 @@ This action allows you to send a Cloud-to-Device message as part of your Github 
  - **message** - the message you want to send to the device
 
 ### Leveraging Secrets
-Your IOT connection string is going to contain a shared access key which will grant anyone with the connection string access to your IOT Hub.  If you are going to use this action in your CI/CD workflow I would highly suggest using [GitHub Secrets](https://docs.github.com/en/actions/configuring-and-managing-workflows/creating-and-storing-encrypted-secrets) to store that data.  You can also choose to add your device-id as a secret.  Using secrets will change the implementation slightly as shown below.
+Your IoT connection string is going to contain a shared access key which will grant anyone with the connection string access to your IoT Hub.  If you are going to use this action in your CI/CD workflow I would highly suggest using [GitHub Secrets](https://docs.github.com/en/actions/configuring-and-managing-workflows/creating-and-storing-encrypted-secrets) to store that data.  You can also choose to add your device-id as a secret.  Using secrets will change the implementation slightly as shown below.
 
     - name: Publish Action C2D Message
       uses: dcparsons/azure-iot-action@v1.0.2
@@ -35,7 +35,7 @@ This action was built as part of my submission for the [dev.to 2020 Actions Hack
 
 # References
 
-The JavaScript used to send messages to the Azure IOT Hub was taken from the [official Microsoft Documentation](https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-node-node-c2d)
+The JavaScript used to send messages to the Azure IoT Hub was taken from the [official Microsoft Documentation](https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-node-node-c2d)
 
 The YAML used to expose this as a Github action was taken from the [official GitHub Documentation](https://docs.github.com/en/actions/creating-actions/creating-a-javascript-action)
 
